@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Projekat Internet programiranje</title>
+
+    <!-- Linkovanje Bootstrap-a -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Početna</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="/pretrazivanje">Pretrazivanje</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/dodajPlac">Dodaj Autoplac</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/izmena">Izmeni podatke</a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+<style>
+    .sredina
+    {
+        display: block;
+        margin-left: 320px;
+        margin-right: 320px;
+    }
+    .dugme
+    {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+</style>
+<br>
+<div class="sredina">
+    <div class="container">
+
+        <form class="well form-horizontal" action="../api/snimiIzmene" method="post">
+            <fieldset>
+
+                <!-- Form Name -->
+                <legend><center><h2><b>Izmeni podatke</b></h2></center></legend><br>
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">ID auto placa</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input type="text" hidden name="ID" placeholder="ID" value="{{automobil.id}}"><br>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" >Ime autoplaca</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input type="text" name="imeAutoPlaca" placeholder="Ime auto placa"  value="{{automobil.imeAutoPlaca}}"><br>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Adresa</label>
+                    <div class="col-md-4 selectContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                            <input type="text" name="adresa" placeholder="Adresa"  value="{{automobil.adresa}}"><br>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Drzava</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input type="text" name="drzava" placeholder="Drzava"  value="{{automobil.drzava}}"><br>
+                        </div>
+                    </div>
+                </div>
+
+<!--                &lt;!&ndash; Text input&ndash;&gt;-->
+
+<!--                <div class="form-group">-->
+<!--                    <label class="col-md-4 control-label" >Marka automobila</label>-->
+<!--                    <div class="col-md-4 inputGroupContainer">-->
+<!--                        <div class="input-group">-->
+<!--                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>-->
+<!--                            <input type="text" name="marka" placeholder="Marka automobila"  value="{{automobil.marka}}"><br>-->
+
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                &lt;!&ndash; Text input&ndash;&gt;-->
+
+<!--                <div class="form-group">-->
+<!--                    <label class="col-md-4 control-label" >Model automobila</label>-->
+<!--                    <div class="col-md-4 inputGroupContainer">-->
+<!--                        <div class="input-group">-->
+<!--                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>-->
+<!--                            <input type="text" name="model" placeholder="Model automobila"  value="{{automobil.model}}"><br>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                &lt;!&ndash; Text input&ndash;&gt;-->
+<!--                <div class="form-group">-->
+<!--                    <label class="col-md-4 control-label">Godiste automobila</label>-->
+<!--                    <div class="col-md-4 inputGroupContainer">-->
+<!--                        <div class="input-group">-->
+<!--                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>-->
+<!--                            <input type="text" name="godiste" placeholder="Godiste automobila"  value="{{automobil.godiste}}"><br>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+
+<!--                &lt;!&ndash; Text input&ndash;&gt;-->
+
+<!--                <div class="form-group">-->
+<!--                    <label class="col-md-4 control-label">Cena automobila</label>-->
+<!--                    <div class="col-md-4 inputGroupContainer">-->
+<!--                        <div class="input-group">-->
+<!--                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>-->
+<!--                            <input type="text" name="cena" placeholder="Cena automobila"  value="{{automobil.cena}}"><br>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+
+
+                <!-- Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4"><br>
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" class="btn btn-warning" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSnimi podatke <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+                    </div>
+                </div>
+                {{#if poruka}}
+                    <div class="bg-success">{{poruka}}</div>
+                {{/if}}
+            </fieldset>
+        </form>
+    </div>
+</div><!-- /.container -->
+</div>
+</body>
+</html>
